@@ -1,9 +1,9 @@
 /**************************************************************************************
- Un negocio de artículos de computación vende DVDs según la siguiente escala de precios:
-• sueltos, entre 1 y 9 a $15 c/u.
-• la caja de 10 cuesta $120.
-• la caja de 50 cuesta $500.
-Si la compra excede las 100 unidades se efectúa un descuento del 10%.
+ Un negocio de artï¿½culos de computaciï¿½n vende DVDs segï¿½n la siguiente escala de precios:
+ï¿½ sueltos, entre 1 y 9 a $15 c/u.
+ï¿½ la caja de 10 cuesta $120.
+ï¿½ la caja de 50 cuesta $500.
+Si la compra excede las 100 unidades se efectï¿½a un descuento del 10%.
 NOTA: se aceptan compras entre 1 y 500 DVDs.
 Se pide que se ingrese una cantidad de DVDs que se quiere comprar y calcule e informe
 el importe a pagar.
