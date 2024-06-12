@@ -13,6 +13,36 @@ decrementando la cantidad de asteriscos.
     *
 */
 
-int main(){
+#include <stdio.h>
+
+int main() {
+    int cantidad;
+
+    printf("Ingrese un numero entero mayor a 0: ");
+    scanf("%d", &cantidad);
+
+    if (cantidad > 0) {
+        for (int i = 1; i <= cantidad; ++i) {
+            for (int j = 1; j <= cantidad - i; j++) {
+                printf(" ");
+            }
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                printf("*");
+            }
+            printf("\n");
+        }
+        for (int l = cantidad - 1;l > 0;l--){
+            for(int m = 1;m <= cantidad - l; m++){
+                printf(" ");
+            }
+            for(int n = 1;n <= 2 * l - 1;n++){
+                printf("*");
+            }
+            printf("\n");
+        }
+    } else {
+        printf("El número ingresado debe ser mayor a 0.\n");
+    }
+
     return 0;
 }

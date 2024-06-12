@@ -11,6 +11,18 @@ Realizar un programa que muestre por pantalla las tablas de multiplicar del 1 al
     9 18 27 36 45 54 63 72 81
 ********************************************************************************************************/
 
+#include <stdio.h>
+
 int main(){
+
+    for(int i = 1; i <= 9;i++){
+        int multiplicacion = i;
+        for(int index = 1; index <= 9;index++){
+            multiplicacion = i * index;
+            printf("%2d ", multiplicacion);
+        }
+        printf("\n");
+    }
+
     return 0;
 }

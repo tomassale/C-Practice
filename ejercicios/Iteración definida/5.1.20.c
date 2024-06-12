@@ -13,19 +13,19 @@ Por ejemplo, si se ingresa el número 5 debe mostrar en pantalla:
 #include <stdio.h>
 
 int main() {
-    int n, i, j, k;
+    int cantidad;
 
     printf("Ingrese un numero entero mayor a 0: ");
-    scanf("%d", &n);
+    scanf("%d", &cantidad);
 
-    if (n > 0) {
-        for (i = 1; i <= n; ++i) {
+    if (cantidad > 0) {
+        for (int i = 1; i <= cantidad; ++i) {
             // Imprimir los espacios necesarios para alinear la pirámide
-            for (j = 1; j <= n - i; j++) {
+            for (int j = 1; j <= cantidad - i; j++) {
                 printf(" ");
             }
             // Imprimir los asteriscos en cada fila, incrementando de 2 en 2
-            for (k = 1; k <= 2 * i - 1; k++) {
+            for (int k = 1; k <= 2 * i - 1; k++) {
                 printf("*");
             }
             printf("\n");
