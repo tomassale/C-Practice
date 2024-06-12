@@ -11,6 +11,56 @@ El programa finaliza cuando se ingresa un valor negativo como número de DNI. Al 
 promedio de alumnos promocionados.
 *********************************************************************************************************/
 
+#include <stdio.h>
+#include <string.h>
+
 int main(){
+
+    int dni;
+    int
+        primerParcial,
+        segundoParcial,
+        promocionados = 0;
+    float
+        promedioPromocionados,
+        notaPromedio;
+    char condicion[30];
+
+    do{
+        printf("\nIngrese el dni: ");
+        scanf("%d", &dni);
+
+        if(dni < 0){
+            break;
+        }
+
+        printf("Ingrese las notas: ");
+        scanf("%d %d", &primerParcial, &segundoParcial);
+
+        if(primerParcial < 1 || primerParcial > 10){
+            printf("\nNumero de nota del primer parcial incorrecto");
+            continue;
+        }else if(segundoParcial < 1 || segundoParcial > 10){
+            printf("\nNumero de nota del segundo parcial incorrecto");
+            continue;
+        }
+
+        if(primerParcial >= 7 && segundoParcial >= 7){
+            promocionados++;
+            notaPromedio += (primerParcial + segundoParcial) / 2.0;
+            strcpy(condicion, "PROMOCIONA");
+        }else if(primerParcial >= 4 && segundoParcial >= 4){
+            strcpy(condicion, "RINDE EXAMEN FINAL");
+        }else{
+            strcpy(condicion, "REPROBO LA MATERIA");
+        }
+
+        printf("El alumno con DNI: %d, obtuvo las notas: %d y %d [%s]\n", dni, primerParcial, segundoParcial, condicion);
+        printf("*******************************************************");
+    }while(dni > 0);
+
+    promedioPromocionados = notaPromedio / promocionados;
+    printf("El promedio de notas de promocionados es: %.1f", promedioPromocionados);
+
     return 0;
 }
