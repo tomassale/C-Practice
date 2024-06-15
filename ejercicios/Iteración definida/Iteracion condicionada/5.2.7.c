@@ -9,10 +9,19 @@ capicúas 'triples' y cuantos 'quíntuples'.
 int main(){
 
     int num;
+    float promedio;
 
-    for(int i = 5;i <= 0;i--){
 
-    }
+    do{
+        for(int i = 1;i <= 5; i++){
+            printf("Ingrese el numero (Terna %d): ", i);
+            scanf(" %d", &num);
+            promedio += (float)num;
+        }
+        promedio /= 5;
+    }while(promedio != 0.0);
+
+    printf("%.2f", promedio);
 
 
     return 0;
