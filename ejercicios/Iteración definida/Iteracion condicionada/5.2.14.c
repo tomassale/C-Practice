@@ -17,3 +17,13 @@ Informar:
 • El mayor sueldo y el legajo del empleado que cobra dicho sueldo.
 • Cantidad de hombres y de mujeres.
 *********************************************************************************************/
+
+#include <stdio.h>
+
+int main(){
+
+    int legajo = ;
+    float sueldoBasico ;
+
+    return 0;
+}
