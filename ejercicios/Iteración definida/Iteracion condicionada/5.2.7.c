@@ -8,21 +8,27 @@ capicúas 'triples' y cuantos 'quíntuples'.
 
 int main(){
 
-    int num;
-    float promedio;
-
+    int num1, num2, num3, num4, num5;
+    int
+        capicuaTriple = 0,
+        capicuaQuintuples = 0;
 
     do{
-        for(int i = 1;i <= 5; i++){
-            printf("Ingrese el numero (Terna %d): ", i);
-            scanf(" %d", &num);
-            promedio += (float)num;
+        printf("Ingrese el numero: ");
+        scanf(" %d %d %d %d %d", &num1, &num2, &num3, &num4, &num5);
+        if(num1 == 0 && num2 == 0 && num3 == 0 && num4 == 0 && num5 == 0){
+            printf("\nPrograma finalizado");
+            break;
         }
-        promedio /= 5;
-    }while(promedio != 0.0);
+        if(num1 == num5 && num2 == num4){
+            capicuaQuintuples++;
+        }else if(num1 == num3 || num2 == num4 || num3 == num5){
+            capicuaTriple++;
+        }
+    }while(num1 != 0 || num2 != 0 || num3 != 0 || num4 || 0 && num5 != 0);
 
-    printf("%.2f", promedio);
-
+    printf("\nCapicuas triples: %d", capicuaTriple);
+    printf("\nCapicuas quintuples: %d", capicuaQuintuples);
 
     return 0;
 }
