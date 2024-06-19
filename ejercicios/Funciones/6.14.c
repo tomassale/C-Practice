@@ -4,4 +4,9 @@ Para validar las fechas utilizar la función del punto 9. Para el cálculo realiza
 fechas y retorne la edad de la persona.
 ***************************************************************************************************************/
 
+#include <stdio.h>
 
+int main(){
+
+    return 0;
+}

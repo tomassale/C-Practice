@@ -12,3 +12,10 @@ Según la opción deseada debe aparecer en pantalla el resultado, sin borrar el me
 valores de opción. Confeccionar y utilizar una función PARA CADA UNA de las opciones y otra para detectar
 la condición final.
 ********************************************************************************************************/
+
+#include <stdio.h>
+
+int main(){
+
+    return 0;
+}

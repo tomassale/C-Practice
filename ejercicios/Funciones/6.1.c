@@ -1,22 +1,101 @@
 /********************************************************************************************************
-Realizar un programa que al ingresar solicite el ingreso de dos números enteros y luego muestre por
-pantalla el siguiente menú (las xx de los números deben ser reemplazadas con los valores
+Realizar un programa que al ingresar solicite el ingreso de dos nï¿½meros enteros y luego muestre por
+pantalla el siguiente menï¿½ (las xx de los nï¿½meros deben ser reemplazadas con los valores
 correspondientes):
-Menú de Opciones
+Menï¿½ de Opciones
 ---- -- --------
 Numero 1: xx Numero 2: xx
 1) Sumar
 2) Restar
 3) Multiplicar
 4) Dividir
-5) Ingresar Nuevos Números
+5) Ingresar Nuevos Nï¿½meros
 6) Salir
-Ingrese su opción:
-Al ingresar el número de la opción del 1 al 4, se realiza la operación y muestra el resultado hasta que se
-presione una tecla. Luego vuelve a mostrar el menú para poder realizar otra operación con los mismos
-números. La opción 5 pide el ingreso de dos nuevos números de trabajo mientras que la opción 6 sale y
+Ingrese su opciï¿½n:
+Al ingresar el nï¿½mero de la opciï¿½n del 1 al 4, se realiza la operaciï¿½n y muestra el resultado hasta que se
+presione una tecla. Luego vuelve a mostrar el menï¿½ para poder realizar otra operaciï¿½n con los mismos
+nï¿½meros. La opciï¿½n 5 pide el ingreso de dos nuevos nï¿½meros de trabajo mientras que la opciï¿½n 6 sale y
 cierra el programa.
-El ingreso de la opción debe estar validado y en caso de ingresarse un número no válido debe solicitarlo
+El ingreso de la opciï¿½n debe estar validado y en caso de ingresarse un nï¿½mero no vï¿½lido debe solicitarlo
 nuevamente.
-Usar una función para mostrar el menú y retornar el valor elegido.
+Usar una funciï¿½n para mostrar el menï¿½ y retornar el valor elegido.
 *********************************************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int menu(int , int);
+int operacion(int , int , int);
+
+int main() {
+    int num1, num2, opcion, resultado;
+
+    printf("Ingrese dos numeros enteros: ");
+    scanf("%d %d", &num1, &num2);
+
+    while (1) {
+        opcion = menu(num1, num2);
+
+        if (opcion == 6) {
+            printf("Programa finalizado\n");
+            break;
+        } else if (opcion == 5) {
+            printf("Ingrese dos numeros enteros: ");
+            scanf("%d %d", &num1, &num2);
+        } else if (opcion >= 1 && opcion <= 4) {
+            resultado = operacion(opcion, num1, num2);
+            printf("\nEl resultado de la operacion es: %d\n", resultado);
+            system("pause"); // Pausa hasta que se presione una tecla
+        } else {
+            printf("Opcion invalida. Intente nuevamente.\n");
+        }
+    }
+
+    return 0;
+}
+
+int menu(int num1, int num2) {
+    system("cls");
+    int opcion;
+
+    printf("Menu de Opciones");
+    printf("\n---- -- --------");
+    printf("\nNumero 1: %d Numero 2: %d", num1, num2);
+    printf("\n1) Sumar\n2) Restar\n3) Multiplicar\n4) Dividir");
+    printf("\n5) Ingresar Nuevos Numeros\n6) Salir");
+    printf("\nIngrese su opcion: ");
+    scanf("%d", &opcion);
+
+    return opcion;
+}
+
+int operacion(int oper, int num1, int num2) {
+    int res;
+
+    switch (oper) {
+    case 1:
+        res = num1 + num2;
+        break;
+    case 2:
+        res = num1 - num2;
+        break;
+    case 3:
+        res = num1 * num2;
+        break;
+    case 4:
+        if (num2 != 0) {
+            res = num1 / num2;
+        } else {
+            printf("Error: Division por cero.\n");
+            res = 0;
+        }
+        break;
+    default:
+        printf("Opcion invalida en operacion.\n");
+        res = 0;
+        break;
+    }
+
+    return res;
+}
+

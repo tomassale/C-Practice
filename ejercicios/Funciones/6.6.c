@@ -4,3 +4,10 @@ comprendidos entre 10001 y 90009 existen más cifras 3 que 4. Debe existir por lo
 sea considerado el número como válido. Para resolverlo confeccionar una función llamada CIFRAS, que
 pueda determinar cuántas cifras “n” existen en un número de 5 cifras.
 ****************************************************************************************************/
+
+#include <stdio.h>
+
+int main(){
+
+    return 0;
+}

@@ -5,3 +5,10 @@ informar para cada terna, el mayor y el menor de los valores. Confeccionar y uti
 parámetros llamada MayorMenor, que permita calcular el menor o el mayor valor de la terna según un
 parámetro de configuración.
 ****************************************************************************************************/
+
+#include <stdio.h>
+
+int main(){
+
+    return 0;
+}
