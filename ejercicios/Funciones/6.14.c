@@ -1,10 +1,12 @@
 /***************************************************************************************************************
 Realizar un programa que ingrese la fecha actual y la fecha de nacimiento de una persona y calcule su edad.
-Para validar las fechas utilizar la función del punto 9. Para el cálculo realizar una función que reciba las dos
+Para validar las fechas utilizar la funcion del punto 9. Para el calculo realizar una funciï¿½n que reciba las dos
 fechas y retorne la edad de la persona.
 ***************************************************************************************************************/
 
 #include <stdio.h>
+
+int calculadorEdad(int,)
 
 int main(){
 

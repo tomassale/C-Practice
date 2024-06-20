@@ -23,36 +23,76 @@ int Promedio(int, int);
 
 int main(){
 
-    int num;
+    int 
+        num, 
+        primos = 0, 
+        pares = 0, 
+        acumuladorImpares = 0,
+        contadorImpares = 0;
+    float    
+        promedioImpares = 0;
+
     while(1){
         printf("Ingrese un numero entero: ");
         scanf(" %d", &num);
-        ValidarNumero(num);
+        if(num == -10){
+            printf("\nIngreso Finalizado");
+            break;
+        }
+        if(ValidarNumero(num) == 0){
+            continue;
+        }
+        if(EsPar(num) == 1){
+            pares++;
+        }else{
+            acumuladorImpares += num;
+            contadorImpares++;
+        }
+        if(EsPrimo(num) == 1){
+            primos++;
+        }
     }
+
+    promedioImpares = Promedio(acumuladorImpares, contadorImpares);
+
+    printf("\nLa cantidad de numeros pares es: %d", pares);
+    printf("\nLa cantidad de numeros primos es: %d", primos);
+    printf("\nEl promedio de numeros impares es: %.2f", promedioImpares);
+
     return 0;
 }
 
 int ValidarNumero(int num){
-    if(num == -10){
-        printf("Ingreso Finalizado");
-    }
     if(num < 1 || num > 50){
-        printf("Numero invalido");
+        printf("Numero invalido\n");
+        return 0;
     }
+    return 1;
 }
 
-int Resto(int , ){
-    
+int Resto(int dividendo, int divisor){
+    return dividendo % divisor;
 }
 
-int EsPar(){
-
+int EsPar(int num){
+    return Resto(num, 2) == 0 ? 1 : 0;
 }
 
-int EsPrimo(){
-    
+int EsPrimo(int num){
+    if (num <= 1){
+        return 0;
+    }
+    for(int i = 2; i <= num / 2; i++){
+        if (Resto(num, i) == 0){
+            return 0;
+        }
+    }
+    return 1;
 }
 
-int Promedio(){
-    
+int Promedio(int suma, int cont){
+    if(cont > 0){
+        return (float)suma / cont;
+    }
+    return 0;
 }
