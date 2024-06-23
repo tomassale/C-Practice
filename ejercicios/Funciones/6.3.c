@@ -34,7 +34,7 @@ int main() {
     while (1) {
         printf("Ingrese el numero del participante (negativo para finalizar): ");
         scanf("%d", &num_participante);
-        
+
         if (num_participante < 0) {
             break;
         }
@@ -45,8 +45,8 @@ int main() {
             do {
                 printf("Ingrese las coordenadas X Y del disparo %d: ", i + 1);
                 scanf("%d %d", &x, &y);
-                cuadrante = CUADRANTE(x, y);
-                
+                cuadrante = Cuadrante(x, y);
+
                 if (cuadrante == -1) {
                     printf("Disparo sobre los ejes, vuelva a ingresar.\n");
                 }
